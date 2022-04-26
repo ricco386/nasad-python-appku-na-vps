@@ -1,0 +1,33 @@
+# gunicorn.service
+
+[Unit]
+Description=Gunicorn service for meetup.example.com website
+# Requires=gunicorn.socket  # Enable if you want to use socket instead of port
+Wants=network.target
+After=network-online.target
+
+[Service]
+Environment=DJANGO_SETTINGS_MODULE=meetup.settings
+Environment=SECRET_KEY=GENERATE_SUPER_SECRET_KEY....................................
+Environment=DEBUG=False
+Restart=always
+# Type=forking
+Type=notify
+# the specific user that our service will run as
+#User=nginx
+#Group=nginx
+User=meetup
+Group=meetup
+# another option for an even more restricted service is
+# DynamicUser=yes
+# see http://0pointer.net/blog/dynamic-users-with-systemd.html
+# RuntimeDirectory=gunicorn
+WorkingDirectory=/var/www/meetup
+ExecStart=/var/www/meetup/envs3/bin/gunicorn meetup.wsgi
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target default.target

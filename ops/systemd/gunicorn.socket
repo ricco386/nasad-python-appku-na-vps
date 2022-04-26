@@ -1,0 +1,16 @@
+# Setup with socket works, but selinux is preventing using it, way too much work instead of using port...
+
+[Unit]
+Description=Gunicorn socket for meetup.example.com service
+
+[Socket]
+ListenStream=/run/meetup/gunicorn.sock
+# Our service won't need permissions for the socket, since it
+# inherits the file descriptor by socket activation
+# only the nginx daemon will need access to the socket
+SocketUser=meetup
+# Optionally restrict the socket permissions even more.
+# SocketMode=600
+
+[Install]
+WantedBy=sockets.target
