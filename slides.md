@@ -30,21 +30,26 @@ Most traditional way of doing things, you can DYI all by your self, but require 
 
 --
 
+Service:
+  * systemd
+  * supervisord
+  * mmonit
+
 Container:
   * Docker, LXC, Podman
   * Kubernetes, OpenShift
 
-
---
+---
 
   * PaaS:
     * Heroku
+    * Python Anywhere
     * Google app Engine
     * etc...
 
 Developer oriented way of deploy the app and leave the rest to platform provider.
 
---
+---
 
 * FaaS
   * AWS Lambda
@@ -57,13 +62,16 @@ Minimalistic way of deploying just a functions and leave the rest to the hosting
 
 # How to deploy on server?
 
-Webserver -> Application server
+--
+
+![](https://miro.medium.com/max/1400/1*rYdZRYct2FKHiGxlJIvORg.png)
 
 --
 
-# How to run application server?
-
-* WSGI app
-* WSGI app in container (not necessary Docker :))
+![](https://miro.medium.com/max/1200/1*xGH9XltLrqRt-_GdmJ2olw.png)
 
 ---
+
+# What is WSGI?
+
+The Web Server Gateway Interface is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python
