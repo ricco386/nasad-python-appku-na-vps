@@ -10,4 +10,4 @@ ADD manage.py /app
 WORKDIR /app
 EXPOSE 8000
 
-CMD ["gunicorn", "meetup.wsgi"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "meetup.wsgi"]
