@@ -16,12 +16,12 @@ function initializeReveal() {
 
       // Optional reveal.js plugins
     dependencies: [
-    { src: '/nasad-python-appku-do-openshift/static/revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-    { src: '/nasad-python-appku-do-openshift/static/revealjs/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-    { src: '/nasad-python-appku-do-openshift/static/revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); }, callback: function() { externalLinksInNewWindow(); } },
-      { src: '/nasad-python-appku-do-openshift/static/revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-      { src: '/nasad-python-appku-do-openshift/static/revealjs/plugin/zoom-js/zoom.js', async: true },
-        { src: '/nasad-python-appku-do-openshift/static/revealjs/plugin/notes/notes.js', async: true }
+    { src: '/nasad-python-appku-na-vps/static/revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+    { src: '/nasad-python-appku-na-vps/static/revealjs/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: '/nasad-python-appku-na-vps/static/revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); }, callback: function() { externalLinksInNewWindow(); } },
+      { src: '/nasad-python-appku-na-vps/static/revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: '/nasad-python-appku-na-vps/static/revealjs/plugin/zoom-js/zoom.js', async: true },
+        { src: '/nasad-python-appku-na-vps/static/revealjs/plugin/notes/notes.js', async: true }
     ]
   });
 }
@@ -36,7 +36,7 @@ function highlightAnyCodeBlocks() {
 
 function insertMarkdownReference() {
   var markdownReference = $('<section/>', {
-    'data-markdown': "/nasad-python-appku-do-openshift/slides.md",
+    'data-markdown': "/nasad-python-appku-na-vps/slides.md",
     'data-separator': "^---",
     'data-separator-vertical': "^--",
     'data-separator-notes': "^Note:",
